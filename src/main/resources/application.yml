@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  application:
+    name: keygen
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://dev.local:8761/eureka}
+
+keygen:
+  keyStore: file:keystore.jks
+  keyStorePassword: 123456
+  caKeyAlias: ca
+  caKeyPassword: ${keygen.keyStorePassword}
+  commonName: SEP Keygen
+  organization: FTN
+  organizationalUnit: SEP
+  countryCode: RS
+  uid: 1
+  token: XqHi5Bf14tp1WVSBDLoQVkQeBUprZVIDNI8RNl8Wq5rlMPuWXOHyx7JEr9TkPRv3
+
+server:
+  ssl:
+    enabled: true
+    trust-store-password: 123456
+    key-store-password: 123456
+    key-alias: main
+    key-password: 123456
+
+  port: ${PORT:0}

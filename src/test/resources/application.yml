@@ -1,0 +1,15 @@
+keygen:
+  keyStore: classpath:keystore.jks
+  keyStorePassword: 123456
+  caKeyAlias: ca
+  caKeyPassword: ${keygen.keyStorePassword}
+
+issuer:
+  commonName: SEP App
+  surname: ''
+  givenName: ''
+  organization: FTN
+  organizationalUnit: SEP
+  countryCode: RS
+  email: ''
+  uid: 0
