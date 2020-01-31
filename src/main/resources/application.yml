@@ -21,7 +21,7 @@ eureka:
     secure-port-enabled: true
   client:
     service-url:
-      defaultZone: ${EUREKA_URI:http://dev.local:8761/eureka}
+      defaultZone: ${EUREKA_URI:http://172.20.0.2:8761/eureka}
 
 keygen:
   keyStore: file:keystore.jks
@@ -36,6 +36,7 @@ keygen:
   token: XqHi5Bf14tp1WVSBDLoQVkQeBUprZVIDNI8RNl8Wq5rlMPuWXOHyx7JEr9TkPRv3
 
 server:
+  forward-headers-strategy: framework
   ssl:
     enabled: true
     trust-store-password: 123456
